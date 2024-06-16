@@ -265,7 +265,7 @@ def main():
     initializer = "Glorot normal"  # "He normal" or "Glorot normal"
     dim_x = 1 if problem in ["ode", "lt"] else 2
     if nn == "opnn":
-        net = dde.maps.OpNN(
+        net = dde.maps.DeepONet(
             [m, 40, 40],
             [dim_x, 40, 40],
             activation,
@@ -279,7 +279,6 @@ def main():
         net = dde.maps.ResNet(m + dim_x, 1, 128, 2, activation, initializer)
 
     run(problem, system, space, T, m, nn, net, lr, epochs, num_train, num_test)
-
 
 if __name__ == "__main__":
     main()

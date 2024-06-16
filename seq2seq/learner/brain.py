@@ -87,7 +87,7 @@ class Brain:
                     return None                
                 if self.save:
                     if not os.path.exists('model'): os.mkdir('model')
-                    torch.save(self.net, 'model/model{}.pkl'.format(i))
+                    torch.save(self.net, 'deeponet/model/model{}.pkl'.format(i))
                 if self.callback is not None: 
                     to_stop = self.callback(self.data, self.net)
                     if to_stop: break

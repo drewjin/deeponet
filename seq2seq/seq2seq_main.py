@@ -78,7 +78,7 @@ def pendulum():
         'dtype': 'float',
         'device': device
     }
-            
+    
     ln.Brain.Init(**args)
     ln.Brain.Run()
     ln.Brain.Restore()
